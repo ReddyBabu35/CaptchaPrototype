@@ -5,6 +5,7 @@ const querries=["select all images contain apple","select all images contain cat
 const img=["apple1.jpg","apple2.jpg","apple3.jpg","apple4.jpg","apple5.jpg","apple6.jpg","cat1.jpg","cat2.jpg","cat3.jpg","cat4.jpg","cat5.jpg","cat6.jpg","dog1.jpg","dog2.jpg","dog3.jpg","dog4.jpg","dog5.jpg","dog6.jpg"]
 var qPointer=0
 var score=[0,0,0]
+let freq=0
 
 function loadFunc(){
     let selected={}
@@ -12,7 +13,7 @@ function loadFunc(){
     let q=querries[qPointer]
     document.getElementById("qrry").innerHTML=q;
     let shuffeldImg=img.sort(()=>0.5-Math.random())
-    var freq=0
+    freq=0
     for (let i=1;i<17;i++){
         document.getElementById(String(i)).src="./imgs/"+shuffeldImg[i];
         if (((qPointer==0)&&(shuffeldImg[i][0]=="a"))||((qPointer==1)&&(shuffeldImg[i][0]=="c"))||((qPointer==2)&&(shuffeldImg[i][0]=="d"))) {
